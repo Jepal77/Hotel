@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourusername/your-php-project.git'
+                git 'https://github.com/Jepal77/Hotel.git'
             }
         }
 
@@ -29,6 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Add deployment steps if needed
+                sh 'echo "Deploying..."'
             }
         }
     }
@@ -36,14 +37,17 @@ pipeline {
     post {
         always {
             // Clean up steps, if needed
+            echo 'Always executed'
         }
 
         success {
             // Notification or further actions on success
+            echo 'Success!'
         }
 
         failure {
             // Notification or further actions on failure
+            echo 'Failure!'
         }
     }
 }
